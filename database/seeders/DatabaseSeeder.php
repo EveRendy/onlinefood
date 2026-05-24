@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+    
+        $users = User::all();
+
+        foreach ($users as $user) {
+            $user->assignRole($user->role);
+            }
     }
 }
